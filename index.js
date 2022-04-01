@@ -1,14 +1,11 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
 const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 const auth = require("./middleware/auth");
-const { send } = require("express/lib/response");
 
 dotenv.config();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res, next) => {
