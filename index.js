@@ -37,7 +37,7 @@ app.post("/auth", async (req, res) => {
       authToken = token;
       res.status(200).json(authToken);
     }
-    res.send(400).send({ msg: "Invalid" });
+    res.status(400).send({ msg: "Invalid" });
   } catch (err) {
     console.log(err);
   }
